@@ -15,10 +15,10 @@ public class UsuarioModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "nome")
+	@Column(name = "ds_nome")
 	private String nome;
 	
-	@Column(name = "senha")
+	@Column(name = "ds_senha")
 	private String senha;
 	
 	public Integer getId() {

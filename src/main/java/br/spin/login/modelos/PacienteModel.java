@@ -10,26 +10,26 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "xxxxx")//Falta Ajustar
+@Table(name = "PACIENTZ")
 public class PacienteModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "XnameX") //Falta Ajustar
+	@Column(name = "ds_nome")
 	private String name;
 	
-	@Column(name = "XanoNascimentoX")//Falta Ajustar
+	@Column(name = "dt_nascimento")
 	private Date anoNascimento;
 	
-	@Column(name = "XtipoSangueX")//Falta Ajustar
+	@Column(name = "tipo_sangue")
 	private String tipoSangue;
 	
-	@Column(name = "XcpfX")//Falta Ajustar
+	@Column(name = "cpf")
 	private String cpf;
 	
-	@Column(name = "XstatusContaX")//Falta Ajustar
+	@Column(name = "status")
 	private boolean statusConta;
 
 	public Integer getId() {
