@@ -35,19 +35,14 @@ public class PacienteController {
 	}
 	
 	@PutMapping("/alterar")
-	public PacienteModel alterarPaciente(@RequestBody PacienteModel alterarPaciente) {
-<<<<<<< HEAD
-		Optional<PacienteModel> pacienteExistente = pacienteRepository.findById(alterarPaciente.getId());
+	public PacienteModel alterarPaciente(@RequestBody PacienteModel salvarPaciente) {
+
+		Optional<PacienteModel> pacienteExistente = pacienteRepository.findById(salvarPaciente.getId());
 		if(!pacienteExistente.isPresent()) {
 			return null;
 		}
-		PacienteModel pacienteAlterado = pacienteRepository.save(alterarPaciente);
+		PacienteModel pacienteAlterado = pacienteRepository.save(salvarPaciente);
 		return pacienteAlterado;
-=======
-		paciente.getById(alterarPaciente.getId());
-		paciente.save(alterarPaciente);
-		return alterarPaciente;
->>>>>>> 746dace820a01e81c299cb9d32f0e7ed0a0864da
 	}
 	
 	@DeleteMapping("/apagar")
