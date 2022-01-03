@@ -36,6 +36,7 @@ public class PacienteController {
 	
 	@PutMapping("/alterar")
 	public PacienteModel alterarPaciente(@RequestBody PacienteModel alterarPaciente) {
+		paciente.getById(alterarPaciente.getId());
 		paciente.save(alterarPaciente);
 		return alterarPaciente;
 	}
