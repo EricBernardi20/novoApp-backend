@@ -1,6 +1,7 @@
 package br.spin.login.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -35,12 +36,11 @@ public class PacienteController {
 	}
 	
 	@PutMapping("/alterar")
-	public PacienteModel alterarPaciente(@RequestBody PacienteModel alterarPaciente) {
-		paciente.getById(alterarPaciente.getId());
-		paciente.save(alterarPaciente);
-		return alterarPaciente;
+	public PacienteModel alterarPaciente(@RequestBody PacienteModel pacienteAlterado) {
+		paciente.save(pacienteAlterado);
+		return pacienteAlterado;
 	}
-	
+
 	@DeleteMapping("/apagar")
 	public PacienteModel deletarPaciente (@RequestBody PacienteModel deletarPaciente) {
 		paciente.deleteById(deletarPaciente.getId());
