@@ -39,21 +39,16 @@ public class UsuarioController {
 	@PutMapping("/alterarsenha")
 	public UsuarioModel alterarSenha(@RequestBody UsuarioModel alterarSenha) {
 		Optional<UsuarioModel> userExistingById = usuarioRepository.findById(alterarSenha.getId());
-		if (!userExistingById.isPresent()) {
-			return null;
-		} else {
+		if (userExistingById.isPresent()) {
 			List<UsuarioModel> userExisting = usuarioRepository.findAll();
 			for (int i = 0; i < userExisting.size(); i++) {
-				if (alterarSenha.getSenha().equals(userExisting.get(i).getSenha()) &
-						!alterarSenha.getNome().equals(userExisting.get(i).getNome())) {
-					return null;
+				if (alterarSenha.getNome().equals(userExisting.get(i).getNome())) {
+					usuarioRepository.save(alterarSenha);
+					return alterarSenha;
 				}
 			}
-
-			alterarSenha.setNome(alterarSenha.getNome());
+		return null;
 		}
-		usuarioRepository.save(alterarSenha);
-		return alterarSenha;
-
+	return null;
 	}
 }
