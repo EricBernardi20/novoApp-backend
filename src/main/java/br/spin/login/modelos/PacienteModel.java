@@ -1,5 +1,6 @@
 package br.spin.login.modelos;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -21,7 +22,7 @@ public class PacienteModel {
 	private String name;
 	
 	@Column(name = "dt_nascimento")
-	private Date anoNascimento;
+	private LocalDate anoNascimento;
 	
 	@Column(name = "tipo_sangue")
 	private String tipoSangue;
@@ -48,11 +49,11 @@ public class PacienteModel {
 		this.name = name;
 	}
 
-	public Date getAnoNascimento() {
+	public LocalDate getAnoNascimento() {
 		return anoNascimento;
 	}
 
-	public void setAnoNascimento(Date anoNascimento) {
+	public void setAnoNascimento(LocalDate anoNascimento) {
 		this.anoNascimento = anoNascimento;
 	}
 
